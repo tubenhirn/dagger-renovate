@@ -15,6 +15,7 @@ dagger.#Plan & {
 		"renovate": renovate.#Run & {
 			repositories: "jstang/semantic-release-gitlab, jstang/rasic"
 			version:      "32.131.1"
+			platform:     "gitlab"
 			gitlabToken:  client.env.GITLAB_TOKEN
 			githubToken:  client.env.GITHUB_TOKEN
 		}
