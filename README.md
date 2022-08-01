@@ -3,7 +3,7 @@
 do renovate dependency updates with dagger
 
 
-## run
+## run renovate
 
 ``` shell
 dagger do renovate
