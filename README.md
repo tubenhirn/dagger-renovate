@@ -1,6 +1,6 @@
 # dagger-renovate
 
-do renovate dependency updates with dagger
+do renovate dependency updates with https://dagger.io
 
 ## run renovate
 
