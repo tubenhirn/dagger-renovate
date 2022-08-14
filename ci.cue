@@ -17,7 +17,7 @@ dagger.#Plan & {
 	actions: {
 		"renovate": renovate.#Run & {
 			repositories: client.env.RENOVATE_REPOSITORIES
-			version:      "32.131.1"
+			version:      "32.159.0"
 			platform:     "gitlab"
 			gitlabToken:  client.env.GITLAB_TOKEN
 			githubToken:  client.env.GITHUB_TOKEN
