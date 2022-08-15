@@ -16,12 +16,12 @@ import (
 	version:            *"latest" | string
 
 	_image: docker.#Pull & {
-		source:       "renovate/renovate:\(version)"
+		source:      "renovate/renovate:\(version)"
 		resolveMode: "preferLocal"
 	}
 
 	docker.#Run & {
-		input: _image.output
+		input:  _image.output
 		always: true
 		env: {
 			RENOVATE_TOKEN:                gitlabToken
