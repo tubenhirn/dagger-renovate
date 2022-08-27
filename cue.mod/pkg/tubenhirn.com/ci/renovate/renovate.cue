@@ -7,7 +7,7 @@ import (
 
 // create a release using semenatic-release
 #Run: {
-	gitlabToken:        dagger.#Secret
+	accessToken:        dagger.#Secret
 	githubToken:        dagger.#Secret
 	autodiscover:       *"false" | string
 	autodiscoverFilter: *"" | string
@@ -24,7 +24,7 @@ import (
 		input:  _image.output
 		always: true
 		env: {
-			RENOVATE_TOKEN:                gitlabToken
+			RENOVATE_TOKEN:                accessToken
 			GITHUB_COM_TOKEN:              githubToken
 			RENOVATE_PLATFORM:             platform
 			RENOVATE_EXTENDS:              "github>whitesource/merge-confidence:beta"

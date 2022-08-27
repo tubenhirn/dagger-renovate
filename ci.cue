@@ -7,7 +7,7 @@ import (
 
 dagger.#Plan & {
 	client: env: {
-		GITLAB_TOKEN: dagger.#Secret
+		ACCESS_TOKEN: dagger.#Secret
 		GITHUB_TOKEN: dagger.#Secret
 		// repositories is a list of git repositories seperated by ","
 		// e.g. "mynamespace/myproject"
@@ -15,12 +15,20 @@ dagger.#Plan & {
 	}
 
 	actions: {
-		"renovate": renovate.#Run & {
+		"renovate-gitlab": renovate.#Run & {
 			repositories: client.env.RENOVATE_REPOSITORIES
 			version:      "32.159.0"
 			platform:     "gitlab"
-			gitlabToken:  client.env.GITLAB_TOKEN
+			accessToken:  client.env.ACCESS_TOKEN
 			githubToken:  client.env.GITHUB_TOKEN
 		}
+		"renovate-github": renovate.#Run & {
+			repositories: client.env.RENOVATE_REPOSITORIES
+			version:      "32.159.0"
+			platform:     "github"
+			accessToken:  client.env.ACCESS_TOKEN
+			githubToken:  client.env.GITHUB_TOKEN
+		}
+
 	}
 }
