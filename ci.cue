@@ -7,7 +7,11 @@ import (
 
 dagger.#Plan & {
 	client: env: {
+		// required for accessing your projects
+		// it's a gitlab access token for gitlab.com OR
+		// it's a github access token for github.com
 		ACCESS_TOKEN: dagger.#Secret
+		// required for fetching changelogs from github.com
 		GITHUB_TOKEN: dagger.#Secret
 		// repositories is a list of git repositories seperated by ","
 		// e.g. "mynamespace/myproject"
