@@ -4,7 +4,9 @@ do renovate dependency updates with https://dagger.io
 
 ## run renovate
 
-export required env and run renovate job
+export required env and run renovate job.
+
+can be run for github or gitlab repositories.
 
 ``` shell
 export RENOVATE_REPOSITORIES="a-namespace/a-project"
