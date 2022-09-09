@@ -10,7 +10,8 @@ dagger.#Plan & {
 		// required for accessing your projects
 		// it's a gitlab access token for gitlab.com OR
 		// it's a github access token for github.com
-		ACCESS_TOKEN: dagger.#Secret
+		GITLAB_ACCESS_TOKEN: dagger.#Secret
+		GITHUB_ACCESS_TOKEN: dagger.#Secret
 		// required for fetching changelogs from github.com
 		GITHUB_TOKEN: dagger.#Secret
 		// repositories is a list of git repositories seperated by ","
@@ -23,14 +24,14 @@ dagger.#Plan & {
 			repositories: client.env.RENOVATE_REPOSITORIES
 			version:      "32.159.0"
 			platform:     "gitlab"
-			accessToken:  client.env.ACCESS_TOKEN
+			accessToken:  client.env.GITLAB_ACCESS_TOKEN
 			githubToken:  client.env.GITHUB_TOKEN
 		}
 		"renovate-github": renovate.#Run & {
 			repositories: client.env.RENOVATE_REPOSITORIES
 			version:      "32.159.0"
 			platform:     "github"
-			accessToken:  client.env.ACCESS_TOKEN
+			accessToken:  client.env.GITHUB_ACCESS_TOKEN
 			githubToken:  client.env.GITHUB_TOKEN
 		}
 
