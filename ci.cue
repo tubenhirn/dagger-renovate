@@ -2,7 +2,7 @@ package ci
 
 import (
 	"dagger.io/dagger"
-	"tubenhirn.com/ci/renovate"
+	"github.com/tubenhirn/dagger-ci-modules/renovate"
 )
 
 dagger.#Plan & {
