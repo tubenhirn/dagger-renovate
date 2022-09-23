@@ -14,6 +14,7 @@ import (
 	platform:           *"gitlab" | string
 	repositories:       *"" | string
 	version:            *"latest" | string
+	logLevel:           *"error" | string
 
 	_image: docker.#Pull & {
 		source:      "renovate/renovate:\(version)"
@@ -36,8 +37,7 @@ import (
 			RENOVATE_AUTODISCOVER:         autodiscover
 			RENOVATE_AUTODISCOVER_FILTER:  autodiscoverFilter
 			RENOVATE_REPOSITORIES:         repositories
-
-			LOG_LEVEL: "debug"
+			LOG_LEVEL:                     logLevel
 		}
 	}
 }
