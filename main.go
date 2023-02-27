@@ -70,6 +70,8 @@ func renovate(ctx context.Context, platform string) error {
 	renovate = renovate.WithEnvVariable("RENOVATE_AUTODISCOVER_FILTER", autodiscoverFilter)
 	renovate = renovate.WithEnvVariable("RENOVATE_REPOSITORIES", repositories)
 	renovate = renovate.WithEnvVariable("LOG_LEVEL", logLevel)
+	// pass this value to avoid dagger caching
+	// we want this container to be executed every time we run it
 	renovate = renovate.WithEnvVariable("CACHE_HACK", cacheHack.String())
 	renovate = renovate.WithExec([]string{})
 
