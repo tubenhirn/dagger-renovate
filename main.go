@@ -27,6 +27,7 @@ type image struct {
 
 var renovateImage = image{
 	Name: "renovate/renovate",
+	//# renovate: datasource=docker depName=renovate/renovate versioning=docker
 	Version: "34.153",
 }
 
