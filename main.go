@@ -57,22 +57,22 @@ func renovate(ctx context.Context) error {
 		panic(err)
 	}
 
-	golang := client.Container().From("renovate/renovate:" + renovateVersion)
-	golang = golang.WithSecretVariable("RENOVATE_TOKEN", client.Secret(accessToken))
-	golang = golang.WithSecretVariable("GITHUB_COM_TOKEN", client.Secret(githubToken))
-	golang = golang.WithEnvVariable("RENOVATE_PLATFORM", platform)
-	golang = golang.WithEnvVariable("RENOVATE_EXTENDS", "github>whitesource/merge-confidence:beta")
-	golang = golang.WithEnvVariable("RENOVATE_REQUIRE_CONFIG", "true")
-	golang = golang.WithEnvVariable("RENOVATE_GIT_AUTHOR", "Renovate Bot <bot@renovateapp.com>")
-	golang = golang.WithEnvVariable("RENOVATE_PIN_DIGEST", "true")
-	golang = golang.WithEnvVariable("RENOVATE_DEPENDENCY_DASHBOARD", "false")
-	golang = golang.WithEnvVariable("RENOVATE_LABELS", "renovate")
-	golang = golang.WithEnvVariable("RENOVATE_AUTODISCOVER", autodiscover)
-	golang = golang.WithEnvVariable("RENOVATE_AUTODISCOVER_FILTER", autodiscoverFilter)
-	golang = golang.WithEnvVariable("RENOVATE_REPOSITORIES", repositories)
-	golang = golang.WithEnvVariable("LOG_LEVEL", logLevel)
+	renovate := client.Container().From("renovate/renovate:" + renovateVersion)
+	renovate = renovate.WithSecretVariable("RENOVATE_TOKEN", client.Secret(accessToken))
+	renovate = renovate.WithSecretVariable("GITHUB_COM_TOKEN", client.Secret(githubToken))
+	renovate = renovate.WithEnvVariable("RENOVATE_PLATFORM", platform)
+	renovate = renovate.WithEnvVariable("RENOVATE_EXTENDS", "github>whitesource/merge-confidence:beta")
+	renovate = renovate.WithEnvVariable("RENOVATE_REQUIRE_CONFIG", "true")
+	renovate = renovate.WithEnvVariable("RENOVATE_GIT_AUTHOR", "Renovate Bot <bot@renovateapp.com>")
+	renovate = renovate.WithEnvVariable("RENOVATE_PIN_DIGEST", "true")
+	renovate = renovate.WithEnvVariable("RENOVATE_DEPENDENCY_DASHBOARD", "false")
+	renovate = renovate.WithEnvVariable("RENOVATE_LABELS", "renovate")
+	renovate = renovate.WithEnvVariable("RENOVATE_AUTODISCOVER", autodiscover)
+	renovate = renovate.WithEnvVariable("RENOVATE_AUTODISCOVER_FILTER", autodiscoverFilter)
+	renovate = renovate.WithEnvVariable("RENOVATE_REPOSITORIES", repositories)
+	renovate = renovate.WithEnvVariable("LOG_LEVEL", logLevel)
 
-	golang.Exec().Stdout(ctx)
+	renovate.Exec().Stdout(ctx)
 
 	return nil
 }
