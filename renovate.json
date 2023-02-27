@@ -23,9 +23,9 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["(^|/)main.\\go$"],
+      "fileMatch": ["(^|/|\\.)main.\\go$"],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\sVersion: (?<currentValue>.*)"
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sVersion: \"(?<currentValue>.*)\""
       ],
       "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
     }
