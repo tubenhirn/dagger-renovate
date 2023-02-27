@@ -4,17 +4,22 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"time"
 
 	"dagger.io/dagger"
 )
 
 func main() {
-	if err := renovate(context.Background()); err != nil {
+	if err := renovate(context.Background(), "github"); err != nil {
+		fmt.Println(err)
+	}
+	if err := renovate(context.Background(), "gitlab"); err != nil {
 		fmt.Println(err)
 	}
 }
 
-func renovate(ctx context.Context) error {
+func renovate(ctx context.Context, platform string) error {
+	cacheHack := time.Now()
 	// initialize Dagger client
 	client, err := dagger.Connect(ctx, dagger.WithLogOutput(os.Stdout))
 	if err != nil {
@@ -25,18 +30,12 @@ func renovate(ctx context.Context) error {
 
 	var accessToken dagger.SecretID
 	var githubToken dagger.SecretID
-	var platform string
 	var repositories string
 
 	renovateVersion := "latest"
 	autodiscover := "false"
 	logLevel := "debug"
 	autodiscoverFilter := ""
-
-	platform, err = client.Host().EnvVariable("PLATFORM").Value(ctx)
-	if err != nil {
-		panic(err)
-	}
 
 	if platform == "github" {
 		accessToken, err = client.Host().EnvVariable("GITHUB_ACCESS_TOKEN").Secret().ID(ctx)
@@ -71,8 +70,15 @@ func renovate(ctx context.Context) error {
 	renovate = renovate.WithEnvVariable("RENOVATE_AUTODISCOVER_FILTER", autodiscoverFilter)
 	renovate = renovate.WithEnvVariable("RENOVATE_REPOSITORIES", repositories)
 	renovate = renovate.WithEnvVariable("LOG_LEVEL", logLevel)
+	renovate = renovate.WithEnvVariable("CACHE_HACK", cacheHack.String())
+	renovate = renovate.WithExec([]string{})
 
-	renovate.Exec().Stdout(ctx)
+	out, err := renovate.Exec().Stdout(ctx)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(out)
 
 	return nil
 }
