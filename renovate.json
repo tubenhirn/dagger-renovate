@@ -23,7 +23,7 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["(^|\/|\\.)main.\\go$"],
+      "fileMatch": ["main\\.go$"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sVersion: \"(?<currentValue>.*)\""
       ],
