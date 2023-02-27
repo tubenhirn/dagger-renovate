@@ -18,6 +18,9 @@ func main() {
 	}
 }
 
+var renovateVersion = "latest"
+var renovateImage = "renoate/renovate"
+
 func renovate(ctx context.Context, platform string) error {
 	cacheHack := time.Now()
 	// initialize Dagger client
@@ -32,7 +35,6 @@ func renovate(ctx context.Context, platform string) error {
 	var githubToken dagger.SecretID
 	var repositories string
 
-	renovateVersion := "latest"
 	autodiscover := "false"
 	logLevel := "debug"
 	autodiscoverFilter := ""
@@ -56,7 +58,7 @@ func renovate(ctx context.Context, platform string) error {
 		panic(err)
 	}
 
-	renovate := client.Container().From("renovate/renovate:" + renovateVersion)
+	renovate := client.Container().From(renovateImage + ":" + renovateVersion)
 	renovate = renovate.WithSecretVariable("RENOVATE_TOKEN", client.Secret(accessToken))
 	renovate = renovate.WithSecretVariable("GITHUB_COM_TOKEN", client.Secret(githubToken))
 	renovate = renovate.WithEnvVariable("RENOVATE_PLATFORM", platform)
