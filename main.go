@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"flag"
 	"fmt"
 	"os"
 	"time"
@@ -10,16 +11,24 @@ import (
 )
 
 func main() {
-	if err := renovate(context.Background(), "github"); err != nil {
-		fmt.Println(err)
-	}
-	if err := renovate(context.Background(), "gitlab"); err != nil {
+	// parse the input flag `platform` to decide where we wanna run the renovate
+	platform := flag.String("platform", "github", "the string of the platform to run renovate on.")
+
+	fmt.Println("running renovate on " + *platform)
+	if err := renovate(context.Background(), *platform); err != nil {
 		fmt.Println(err)
 	}
 }
 
-var renovateVersion = "latest"
-var renovateImage = "renoate/renovate"
+type image struct {
+	Name    string
+	Version string
+}
+
+var renovateImage = image{
+	Name: "renovate/renovate",
+	Version: "34.153",
+}
 
 func renovate(ctx context.Context, platform string) error {
 	cacheHack := time.Now()
@@ -58,7 +67,7 @@ func renovate(ctx context.Context, platform string) error {
 		panic(err)
 	}
 
-	renovate := client.Container().From(renovateImage + ":" + renovateVersion)
+	renovate := client.Container().From(createImageString(renovateImage))
 	renovate = renovate.WithSecretVariable("RENOVATE_TOKEN", client.Secret(accessToken))
 	renovate = renovate.WithSecretVariable("GITHUB_COM_TOKEN", client.Secret(githubToken))
 	renovate = renovate.WithEnvVariable("RENOVATE_PLATFORM", platform)
@@ -75,14 +84,15 @@ func renovate(ctx context.Context, platform string) error {
 	// pass this value to avoid dagger caching
 	// we want this container to be executed every time we run it
 	renovate = renovate.WithEnvVariable("CACHE_HACK", cacheHack.String())
-	renovate = renovate.WithExec([]string{})
 
-	out, err := renovate.Exec().Stdout(ctx)
+	_, err = renovate.Exec().Stdout(ctx)
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(out)
-
 	return nil
+}
+
+func createImageString(img image) string {
+	return fmt.Sprintf("%s:%s", img.Name, img.Version)
 }
