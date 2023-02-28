@@ -58,7 +58,7 @@ func main() {
 			"RENOVATE_TOKEN": renovateTokenId,
 			"GITHUB_COM_TOKEN":   githubTokenId,
 		},
-		LogLevel: "debug",
+		LogLevel: "info",
 	}
 
 	renovate.Renovate(ctx, *client, options)
