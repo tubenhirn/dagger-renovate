@@ -11,11 +11,11 @@ dagger.#Plan & {
 		GITLAB_ACCESS_TOKEN: dagger.#Secret
 		GITHUB_ACCESS_TOKEN: dagger.#Secret
 		// required for fetching changelogs from github.com
-		GITHUB_TOKEN: dagger.#Secret
+		GITHUB_COM_TOKEN: dagger.#Secret
 		// repositories is a list of git repositories seperated by ","
 		// e.g. "mynamespace/myproject"
-		RENOVATE_REPOSITORIES_GITLAB: string
-		RENOVATE_REPOSITORIES_GITHUB: string
+		GITLAB_RENOVATE_REPOSITORIES: string
+		GITHUB_RENOVATE_REPOSITORIES: string
 	}
 
 	actions: {
