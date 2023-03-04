@@ -23,11 +23,11 @@
 
 github: ##  run renovate for github.com repositories
 	@echo "renovate github..."
-	go run main.go -platform=github
+	go run main.go --platform=github
 
 gitlab: ##  run renovate for gitlab.com repositories
 	@echo "renovate gitlab..."
-	go run main.go -platform=gitlab
+	go run main.go --platform=gitlab
 
 .PHONY: help
 help:  ## 🤔 Show help messages for make targets
