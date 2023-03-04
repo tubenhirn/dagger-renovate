@@ -56,6 +56,8 @@ github.com/tubenhirn/dagger-ci-modules/v2 v2.0.0-20230228212357-7caf61f56760 h1:
 github.com/tubenhirn/dagger-ci-modules/v2 v2.0.0-20230228212357-7caf61f56760/go.mod h1:9E+bBvNamkDzn2xjVN9Sb1DOXW69cYZNyDu8HOL6GmI=
 github.com/tubenhirn/dagger-ci-modules/v2 v2.0.0-20230228213235-5470090f8585 h1:B4RCu8BkBMzkgrCJ4oHbPIkqHx2zA0uXNhWHefwO6/A=
 github.com/tubenhirn/dagger-ci-modules/v2 v2.0.0-20230228213235-5470090f8585/go.mod h1:9E+bBvNamkDzn2xjVN9Sb1DOXW69cYZNyDu8HOL6GmI=
+github.com/tubenhirn/dagger-ci-modules/v2 v2.0.0-20230304144248-7d6f6b77971b h1:QTFLPPq9CxboIoAszSesklO66YYwsmaqDBq/a0ZwyIQ=
+github.com/tubenhirn/dagger-ci-modules/v2 v2.0.0-20230304144248-7d6f6b77971b/go.mod h1:9E+bBvNamkDzn2xjVN9Sb1DOXW69cYZNyDu8HOL6GmI=
 github.com/urfave/cli/v2 v2.3.0/go.mod h1:LJmUH05zAU44vOAcrfzZQKsZbVcdbOG8rtL3/XcUArI=
 github.com/vektah/gqlparser/v2 v2.4.0/go.mod h1:flJWIR04IMQPGz+BXLrORkrARBxv/rtyIAFvd/MceW0=
 github.com/vektah/gqlparser/v2 v2.4.5/go.mod h1:flJWIR04IMQPGz+BXLrORkrARBxv/rtyIAFvd/MceW0=
