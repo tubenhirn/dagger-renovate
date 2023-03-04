@@ -22,11 +22,9 @@
 # //     // //////// //      ///   ///////       //     //      //     //     ////////
 
 github: ##  run renovate for github.com repositories
-	@echo "renovate github..."
 	go run main.go --platform=github
 
 gitlab: ##  run renovate for gitlab.com repositories
-	@echo "renovate gitlab..."
 	go run main.go --platform=gitlab
 
 .PHONY: help
