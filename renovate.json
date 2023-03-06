@@ -21,8 +21,7 @@
       "semanticCommitType": "fix"
     },
     {
-      "matchDatasources": ["go"],
-      "matchPackageNames": ["dagger.io/dagger"],
+      "matchDepNames": ["dagger.io/dagger"],
       "replacementName": "dagger/dagger-go-sdk"
     }
   ],
