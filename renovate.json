@@ -21,9 +21,9 @@
       "semanticCommitType": "fix"
     },
     {
-      "matchManagers": ["gomod"],
-      "matchDepTypes": ["indirect"],
-      "enabled": true
+      "matchDatasources": ["go"],
+      "matchPackageNames": ["dagger.io/dagger"],
+      "replacementName": "github.com/dagger/dagger-go-sdk"
     }
   ],
   "regexManagers": [
