@@ -58,7 +58,7 @@ func main() {
 		Repositories:       repositories,
 		Env:                map[string]string{},
 		Secret:             secrets,
-		LogLevel:           "info",
+		LogLevel:           "debug",
 	}
 
 	renovate.Renovate(ctx, *client, options)
