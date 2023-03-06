@@ -19,10 +19,6 @@
       "description": "Trigger fix release for patch updates",
       "matchUpdateTypes": ["patch", "digest"],
       "semanticCommitType": "fix"
-    },
-    {
-      "matchDepNames": ["dagger.io/dagger"],
-      "replacementName": "https://github.com/dagger/dagger-go-sdk"
     }
   ],
   "regexManagers": [
