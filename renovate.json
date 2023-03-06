@@ -23,7 +23,7 @@
     {
       "matchDatasources": ["go"],
       "matchPackageNames": ["dagger.io/dagger"],
-      "replacementName": "github.com/dagger/dagger-go-sdk"
+      "replacementName": "dagger/dagger-go-sdk"
     }
   ],
   "regexManagers": [
