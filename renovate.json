@@ -1,29 +1,54 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "baseBranches": ["main"],
-  "extends": ["config:base", ":semanticCommits", ":disableDependencyDashboard"],
-  "ignorePaths": ["**/cue.mod/**"],
+  "baseBranches": [
+    "main"
+  ],
+  "extends": [
+    "config:base",
+    ":semanticCommits",
+    ":disableDependencyDashboard"
+  ],
+  "ignorePaths": [
+    "**/cue.mod/**"
+  ],
   "packageRules": [
     {
       "description": "Trigger breaking release for major updates",
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "semanticCommitType": "feat",
       "commitBody": "BREAKING CHANGE: Major update"
     },
     {
       "description": "Trigger feature release for minor updates",
-      "matchUpdateTypes": ["minor"],
+      "matchUpdateTypes": [
+        "minor"
+      ],
       "semanticCommitType": "feat"
     },
     {
       "description": "Trigger fix release for patch updates",
-      "matchUpdateTypes": ["patch", "digest"],
+      "matchUpdateTypes": [
+        "patch",
+        "digest"
+      ],
       "semanticCommitType": "fix"
+    }
+  ],
+  "hostRules": [
+    {
+      "matchHost": "dagger.io/dagger",
+    },
+    {
+      "matchHost": "https://github.com/dagger/dagger-go-sdk ",
     }
   ],
   "regexManagers": [
     {
-      "fileMatch": ["(^|/)main\\.go$"],
+      "fileMatch": [
+        "(^|/)main\\.go$"
+      ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*Version: \"(?<currentValue>.*)\""
       ],
