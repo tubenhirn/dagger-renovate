@@ -3,7 +3,6 @@
   "baseBranches": ["main"],
   "extends": ["config:base", ":semanticCommits", ":disableDependencyDashboard"],
   "ignorePaths": ["**/cue.mod/**"],
-  "postUpdateOptions": ["gomodTidy", "gomodMassage", "gomodUpdateImportPaths"],
   "packageRules": [
     {
       "description": "Trigger breaking release for major updates",
@@ -20,16 +19,6 @@
       "description": "Trigger fix release for patch updates",
       "matchUpdateTypes": ["patch", "digest"],
       "semanticCommitType": "fix"
-    },
-    {
-      "matchDatasources": ["go"],
-      "registryUrls": ["https://pkg.go.dev"]
-    }
-  ],
-  "hostRules": [
-    {
-      "matchHost": "dagger.io/dagger",
-      "hostType": "go"
     }
   ],
   "regexManagers": [
