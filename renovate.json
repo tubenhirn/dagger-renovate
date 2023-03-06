@@ -19,6 +19,11 @@
       "description": "Trigger fix release for patch updates",
       "matchUpdateTypes": ["patch", "digest"],
       "semanticCommitType": "fix"
+    },
+    {
+      "matchManagers": ["gomod"],
+      "matchDepTypes": ["indirect"],
+      "enabled": true
     }
   ],
   "regexManagers": [
