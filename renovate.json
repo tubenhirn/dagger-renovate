@@ -38,10 +38,10 @@
   ],
   "hostRules": [
     {
-      "matchHost": "dagger.io/dagger",
+      "matchHost": "dagger.io/dagger"
     },
     {
-      "matchHost": "https://github.com/dagger/dagger-go-sdk ",
+      "matchHost": "https://github.com/dagger/dagger-go-sdk "
     }
   ],
   "regexManagers": [
