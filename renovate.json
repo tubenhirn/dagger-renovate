@@ -22,7 +22,7 @@
     },
     {
       "matchDepNames": ["dagger.io/dagger"],
-      "replacementName": "dagger/dagger-go-sdk"
+      "replacementName": "https://github.com/dagger/dagger-go-sdk"
     }
   ],
   "regexManagers": [
