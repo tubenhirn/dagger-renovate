@@ -9,9 +9,8 @@ export required env and run renovate job.
 can be run for github or gitlab repositories.
 
 ``` shell
-export RENOVATE_REPOSITORIES="a-namespace/a-project"
-export ACCESS_TOKEN="a-access-token"
-export GITHUB_TOKEN="a-github-token"
-dagger do renovate-<github|gitlab>
+export RENOVATE_GITHUB_REPOSITORIES="a-namespace/a-project"
+export GITHUB_ACCESS_TOKEN="a-access-token"
+make github
 ```
 
