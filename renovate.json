@@ -1,8 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "baseBranches": ["main"],
-  "extends": ["config:base", ":semanticCommits", ":disableDependencyDashboard"],
-  "ignorePaths": ["**/cue.mod/**"],
+  "extends": ["config:base", ":semanticCommits", ":disableDependencyDashboard", "github>tubenhirn/renovate-config:postUpdateOptions"],
   "packageRules": [
     {
       "description": "Trigger breaking release for major updates",
