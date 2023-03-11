@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"dagger.io/dagger"
-	"github.com/tubenhirn/dagger-ci-modules/v2/renovate"
+	"github.com/tubenhirn/dagger-ci-modules/renovate"
 )
 
 func main() {
