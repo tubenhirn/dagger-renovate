@@ -3,7 +3,7 @@ module renovate
 go 1.20
 
 require (
-	dagger.io/dagger v0.4.6
+	dagger.io/dagger v0.5.0
 	github.com/tubenhirn/dagger-ci-modules v1.12.2
 )
 
