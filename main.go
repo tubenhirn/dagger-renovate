@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"dagger.io/dagger"
-	"github.com/tubenhirn/dagger-ci-modules/renovate"
+	"github.com/tubenhirn/dagger-ci-modules/v4"
 )
 
 func main() {
@@ -51,7 +51,7 @@ func main() {
 		secrets["GITHUB_COM_TOKEN"] = githubTokenId
 	}
 
-	options := renovate.RenovateOpts{
+	options := cimodules.RenovateOpts{
 		Platform:           *platform,
 		Autodiscover:       false,
 		AutodiscoverFilter: "",
@@ -61,5 +61,5 @@ func main() {
 		LogLevel:           "info",
 	}
 
-	renovate.Renovate(ctx, *client, options)
+	cimodules.Renovate(ctx, *client, options)
 }
