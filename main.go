@@ -27,23 +27,26 @@ func main() {
 
 	fmt.Println("running renovate on " + *platform)
 
-	var renovateTokenId dagger.SecretID
 	var repositories string
 	var secrets = make(map[string]dagger.SecretID)
 	if *platform == "github" {
 		repositories = os.Getenv("GITHUB_RENOVATE_REPOSITORIES")
-		renovateTokenId, err = client.Host().EnvVariable("GITHUB_ACCESS_TOKEN").Secret().ID(ctx)
+		token := os.Getenv("GITHUB_ACCESS_TOKEN")
+		renovateTokenId, err := client.SetSecret("GITHUB_ACCESS_TOKEN", token).ID(ctx)
 		if err != nil {
 			panic(err)
 		}
 		secrets["RENOVATE_TOKEN"] = renovateTokenId
 	} else {
 		repositories = os.Getenv("GITLAB_RENOVATE_REPOSITORIES")
-		renovateTokenId, err = client.Host().EnvVariable("GITLAB_ACCESS_TOKEN").Secret().ID(ctx)
+		gitlabtoken := os.Getenv("GITLAB_ACCESS_TOKEN")
+		renovateTokenId, err := client.SetSecret("GITLAB_ACCESS_TOKEN", gitlabtoken).ID(ctx)
 		if err != nil {
 			panic(err)
 		}
-		githubTokenId, err := client.Host().EnvVariable("GITHUB_COM_TOKEN").Secret().ID(ctx)
+		githubtoken := os.Getenv("GITHUB_COM_TOKEN")
+		githubTokenId, err := client.SetSecret("GITHUB_COM_TOKEN", githubtoken).ID(ctx)
+
 		if err != nil {
 			panic(err)
 		}
