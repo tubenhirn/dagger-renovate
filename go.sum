@@ -29,6 +29,16 @@ github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/
 github.com/stretchr/testify v1.8.3 h1:RP3t2pwF7cMEbC1dqtB6poj3niw/9gnV4Cjg5oW5gtY=
 github.com/tubenhirn/dagger-ci-modules/v5 v5.2.12 h1:dvSnCjQsqmRz+JdqUCQi0tkDc57CKmQERvwxHjPj1fs=
 github.com/tubenhirn/dagger-ci-modules/v5 v5.2.12/go.mod h1:bE9SYkPnlNDo8Cdu/Yl2O7DQP9rPCN9Kv3Lsi3fwhEM=
+github.com/tubenhirn/dagger-ci-modules/v5 v5.2.13 h1:jimYmBQCK4GiWu4KGL27w4UAjLrIZOwTNQsj0xBhVMs=
+github.com/tubenhirn/dagger-ci-modules/v5 v5.2.13/go.mod h1:bE9SYkPnlNDo8Cdu/Yl2O7DQP9rPCN9Kv3Lsi3fwhEM=
+github.com/tubenhirn/dagger-ci-modules/v5 v5.2.14 h1:Zwk3y4/ZviVzQja7mfBCg0Du3AeuvKG/Di3x+gyRUWQ=
+github.com/tubenhirn/dagger-ci-modules/v5 v5.2.14/go.mod h1:bE9SYkPnlNDo8Cdu/Yl2O7DQP9rPCN9Kv3Lsi3fwhEM=
+github.com/tubenhirn/dagger-ci-modules/v5 v5.2.15 h1:QiMDEdwPAcW9KVZRujvoPkFwfvFByvSNgfXsQlCi4s0=
+github.com/tubenhirn/dagger-ci-modules/v5 v5.2.15/go.mod h1:bE9SYkPnlNDo8Cdu/Yl2O7DQP9rPCN9Kv3Lsi3fwhEM=
+github.com/tubenhirn/dagger-ci-modules/v5 v5.2.16 h1:oNkxTkOhVA19V90+URx6sDaVWzg9+8frDXboIWXLOVk=
+github.com/tubenhirn/dagger-ci-modules/v5 v5.2.16/go.mod h1:bE9SYkPnlNDo8Cdu/Yl2O7DQP9rPCN9Kv3Lsi3fwhEM=
+github.com/tubenhirn/dagger-ci-modules/v5 v5.2.17 h1:7IuiEumQrgnl5bLhsx2TmdZ0ut3x/e2lsqw1NLDgeDk=
+github.com/tubenhirn/dagger-ci-modules/v5 v5.2.17/go.mod h1:bE9SYkPnlNDo8Cdu/Yl2O7DQP9rPCN9Kv3Lsi3fwhEM=
 github.com/vektah/gqlparser/v2 v2.5.6 h1:Ou14T0N1s191eRMZ1gARVqohcbe1e8FrcONScsq8cRU=
 github.com/vektah/gqlparser/v2 v2.5.6/go.mod h1:z8xXUff237NntSuH8mLFijZ+1tjV1swDbpDqjJmk6ME=
 golang.org/x/exp v0.0.0-20231006140011-7918f672742d h1:jtJma62tbqLibJ5sFQz8bKtEM8rJBtfilJ2qTU199MI=
