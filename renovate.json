@@ -6,6 +6,7 @@
     ":semanticCommits",
     ":disableDependencyDashboard",
     "github>tubenhirn/renovate-config:postUpdateOptions",
-    "github>tubenhirn/renovate-config:prHourlyLimit"
+    "github>tubenhirn/renovate-config:prHourlyLimit",
+    "github>tubenhirn/renovate-config:automerge"
   ]
 }
