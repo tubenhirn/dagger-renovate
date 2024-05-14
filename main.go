@@ -64,5 +64,8 @@ func main() {
 		LogLevel:           "info",
 	}
 
-	cimodules.Renovate(ctx, *client, options)
+	err = cimodules.Renovate(ctx, *client, options)
+	if err != nil {
+		panic(err)
+	}
 }
