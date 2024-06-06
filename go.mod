@@ -2,7 +2,7 @@ module renovate
 
 go 1.21
 
-toolchain go1.21.4
+toolchain go1.22.4
 
 require (
 	dagger.io/dagger v0.11.4
