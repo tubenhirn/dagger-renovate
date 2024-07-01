@@ -61,7 +61,7 @@ func main() {
 		Repositories:       repositories,
 		Env:                map[string]string{},
 		Secret:             secrets,
-		LogLevel:           "info",
+		LogLevel:           "warn",
 	}
 
 	err = cimodules.Renovate(ctx, *client, options)
